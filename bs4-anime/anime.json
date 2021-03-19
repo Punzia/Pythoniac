@@ -1,0 +1,25 @@
+{
+    "anime": [
+        {
+            "title": "Jujutsu Kaisen",
+            "site": "https://www.episodate.com/tv-show/jujutsu-kaisen"
+        },
+        {
+            "title": "Re:Zero Hajimeru Isekai Seikatsu",
+            "site": "https://www.episodate.com/tv-show/re-zero-kara-hajimeru-isekai-seikatsu?season=2"
+        },
+        {
+            "title": "Dr Stone Season 2",
+            "site": "https://www.episodate.com/tv-show/dr-stone?season=2"
+        },
+        {
+            "title": "Seven Deadly Sins: Dragons Judgement",
+            "site": "https://www.episodate.com/tv-show/the-seven-deadly-sins"
+        },
+        {
+            "title": "The Promised Neverland",
+            "site": "https://www.episodate.com/tv-show/the-promised-neverland"
+        }
+
+    ]
+}
