@@ -29,5 +29,5 @@ youcdn = [
 for y in youcdn:
     html = requests.get(y).text
     oArrau = BeautifulSoup(html, "html.parser")
-    output = oArrau.find_all("div", class_="date-text")
+    output = oArrau.find("div", class_="date-text")
     print(output)
