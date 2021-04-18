@@ -5,14 +5,17 @@ import json
 
 file = open('anime.json')
 data = json.load(file)
+
 for p in data['anime']:
     
     html = requests.get(p['site']).text
     oArrau = BeautifulSoup(html, "html.parser")
-    output = oArrau.find("div", class_="cd-timeline-block cd-inactive")
-    #print('Website: ' + p['site'])
-    print('<h2 style="color: white; text-align:center;">' + p['title'] + '</h2>')
-    print(output)
+    output = oArrau.find("div", class_="cd-timeline-block cd-inactive")  
+    
+    for foo in output.find_all('div', class_='cd-timeline-content'):
+        bar = foo.find('div', class_='cd-timeline-content-data')
+        print('<h2 class="titles">' + p['title'] + '</h2>')
+        print(bar)
 
 youcdn = [
     # Your countdown seems to have more accurate release, otherwise Episodate is currently under DMCA
