@@ -1,36 +1,41 @@
 from bs4 import BeautifulSoup
 import requests
+import csv
 import json
+import asyncio
 
+# https://horsetourneys.com/leaderboard/contest/900537/quick-early-bird-500-guaranteed-w-no-limit-p-p.html
+# https://erikrood.com/Python_References/web_scrape.html
+# data-datetime="2020-10-23T16:25:00+00:00"
+# https://www.episodate.com/tv-show/majo-no-tabitabi
 
-file = open('anime.json')
+file = open('2anime.json')
 data = json.load(file)
+#animeOne = []
 
-for p in data['anime']:
-    
-    html = requests.get(p['site']).text
-    oArrau = BeautifulSoup(html, "html.parser")
-    output = oArrau.find("div", class_="cd-timeline-block cd-inactive")  
-    
-    for foo in output.find_all('div', class_='cd-timeline-content'):
-        bar = foo.find('div', class_='cd-timeline-content-data')
-        print('<h2 class="titles">' + p['title'] + '</h2>')
-        print(bar)
+def latestEpisode():
+    for p in data['anime']:
+        html = requests.get(p['site']).text
+        oArrau = BeautifulSoup(html, "html.parser")
+        output = oArrau.find("div", class_="cd-timeline-block cd-inactive")
 
-youcdn = [
-    # Your countdown seems to have more accurate release, otherwise Episodate is currently under DMCA
-    "https://yourcountdown.to/attack-on-titan"
-    # Still in an array in case adding more links
-]
-#for x in epdate:
-#    html = requests.get(x).text
-#    oArrau = BeautifulSoup(html, "html.parser")
-#    output = oArrau.find_all("div", class_="cd-timeline-block cd-inactive")
-#    print(output)
-# Just uncommented due to using external .json file instead.
+        for foo in output.find_all('div', class_='cd-timeline-content'):
+            bar = foo.find('div', class_='cd-timeline-content-data')
+            print('<h2 class="titles">' + p['title'] + '</h2>')
+            print(bar)
 
-for y in youcdn:
-    html = requests.get(y).text
-    oArrau = BeautifulSoup(html, "html.parser")
-    output = oArrau.find("div", class_="date-text")
-    print(output)
+
+
+def latestEpisodeTwo():
+    for i in data['anime-two']:
+
+        html = requests.get(i['site']).text
+        oArrau = BeautifulSoup(html, "html.parser")
+        output = oArrau.find("div", class_="date-text")
+        print('<h2 class="titles">' + i['title'] + '</h2>')
+        print(output)
+
+
+latestEpisode()
+latestEpisodeTwo()
+ 
