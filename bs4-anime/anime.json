@@ -1,24 +1,37 @@
 {
     "anime": [
         {
-            "title": "Jujutsu Kaisen",
-            "site": "https://www.episodate.com/tv-show/jujutsu-kaisen"
-        },
-        {
-            "title": "Re:Zero Hajimeru Isekai Seikatsu",
-            "site": "https://www.episodate.com/tv-show/re-zero-kara-hajimeru-isekai-seikatsu?season=2"
-        },
-        {
-            "title": "Dr Stone Season 2",
-            "site": "https://www.episodate.com/tv-show/dr-stone?season=2"
-        },
-        {
-            "title": "Seven Deadly Sins: Dragons Judgement",
+            "title": "<i class='em em-dragon'></i> Seven Deadly Sins: Dragons Judgement <i class='em em-dragon'></i>",
             "site": "https://www.episodate.com/tv-show/the-seven-deadly-sins"
         },
         {
-            "title": "The Promised Neverland",
-            "site": "https://www.episodate.com/tv-show/the-promised-neverland"
+            "title": "<i class='em em-facepunch'></i> Boku no Hero Academia Season 5 <i class='em em-facepunch'></i>",
+            "site": "https://www.episodate.com/tv-show/boku-no-hero-academia"
+        },
+        {
+            "title": "<i class='em em-spider'></i> So I'm a Spider, So What? <i class='em em-spider'></i>",
+            "site": "https://www.episodate.com/tv-show/so-i-m-a-spider-so-what"
+        },
+		{
+		   "title": "Vivy: Fluorite Eye's Song",
+		   "site": "https://www.episodate.com/tv-show/vivy-fluorite-eye-s-song"	
+		}, 
+        {
+            "title":"86",
+            "site": "https://www.episodate.com/tv-show/86"
+
+        }
+
+
+    ],
+    "anime-two": [
+        {
+            "title": "<i class='em em-smiling_imp'></i> How Not To Summon A Demon Lord Season 2 <i class='em em-smiling_imp'></i>",
+            "site": "https://yourcountdown.to/how-not-to-summon-a-demon-lord"
+        },
+        {
+            "title": "Attack on Titan",
+            "site": "https://yourcountdown.to/attack-on-titan-release-date"
         }
 
     ]
