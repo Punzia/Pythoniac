@@ -4,10 +4,6 @@ import csv
 import json
 import asyncio
 
-# https://horsetourneys.com/leaderboard/contest/900537/quick-early-bird-500-guaranteed-w-no-limit-p-p.html
-# https://erikrood.com/Python_References/web_scrape.html
-# data-datetime="2020-10-23T16:25:00+00:00"
-# https://www.episodate.com/tv-show/majo-no-tabitabi
 
 file = open('2anime.json')
 data = json.load(file)
@@ -17,7 +13,7 @@ def latestEpisode():
     for p in data['anime']:
         html = requests.get(p['site']).text
         oArrau = BeautifulSoup(html, "html.parser")
-        output = oArrau.find("div", class_="cd-timeline-block cd-inactive")
+        output = oArrau.find("div", class_="cd-timeline-block cd-unwatched")
 
         for foo in output.find_all('div', class_='cd-timeline-content'):
             bar = foo.find('div', class_='cd-timeline-content-data')
