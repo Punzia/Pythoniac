@@ -1,26 +1,23 @@
 from bs4 import BeautifulSoup
 import requests
-import csv
 import json
-import asyncio
-
 
 file = open('2anime.json')
 data = json.load(file)
-#animeOne = []
 
 def latestEpisode():
     for p in data['anime']:
         html = requests.get(p['site']).text
         oArrau = BeautifulSoup(html, "html.parser")
-        output = oArrau.find("div", class_="cd-timeline-block cd-unwatched")
-
-        for foo in output.find_all('div', class_='cd-timeline-content'):
-            bar = foo.find('div', class_='cd-timeline-content-data')
-            print('<h2 class="titles">' + p['title'] + '</h2>')
-            print(bar)
-
-
+        #check if the inactive tags are available.
+        if oArrau.find_all("div", {"class": "cd-timeline-block cd-inactive"}):           
+             output = oArrau.find("div", class_="cd-timeline-block cd-inactive")
+             #check the latest first element the current coming episode (If the date is next week, the episode is out!) 
+             for foo in output.find_all('div', class_='cd-timeline-content'):
+                 bar = foo.find('div', class_='cd-timeline-content-data')
+                 print('<h2 class="titles">' + p['title'] + '</h2>')
+                 print(bar)
+        #print('<h2 class="titles">' + p['title'] + '</h2>')
 
 def latestEpisodeTwo():
     for i in data['anime-two']:
@@ -34,4 +31,4 @@ def latestEpisodeTwo():
 
 latestEpisode()
 latestEpisodeTwo()
- 
+
