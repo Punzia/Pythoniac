@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import json
 
-file = open('2anime.json')
+file = open('anime.json')
 data = json.load(file)
 
 def latestEpisode():
