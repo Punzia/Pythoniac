@@ -1,3 +1,2 @@
 # Pythoniac
-Little bit of Python used with PHP
-Maniac does Python stuff
+Stuff used with Python + misc with PHP
